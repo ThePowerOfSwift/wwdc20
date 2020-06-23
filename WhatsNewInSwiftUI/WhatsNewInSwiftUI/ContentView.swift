@@ -33,7 +33,7 @@ struct ContentView: View {
                 // Gauge(value: percent, in: 0...1) {
                 //     Label("Gauge", systemImage: "drop.fill").foregroundColor(.green)
                 // } currentValueLabel, minimumValueLabel, maximumValueLabel
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 100, maximum: 200))]) {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 00, maximum: 200))]) {
                     list(for: items)
                 }
                 LazyHStack {
