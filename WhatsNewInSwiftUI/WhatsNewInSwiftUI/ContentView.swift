@@ -26,7 +26,6 @@ struct ContentView: View {
             ScrollView {
                 SignInWithAppleButton(.signUp, onRequest: { _ in }, onCompletion: { _ in })
                     .signInWithAppleButtonStyle(.black)
-                
                 // Label(text, systemImage: "heart")
                 // ProgressView()
                 // ProgressView("Foo", value: percent, total: 1).progressViewStyle(LinearProgressViewStyle())
@@ -37,10 +36,12 @@ struct ContentView: View {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 100, maximum: 200))]) {
                     list(for: items)
                 }
-                LazyVStack {
+                LazyHStack {
                     list(for: selectedItems)
-                }
-            }.toolbar {
+                }.frame(height: 100)
+            }
+            .animation(.easeIn)
+            .toolbar {
                 ToolbarItem(placement: .principal) {
                     Picker("Picker", selection: $picked) {
                         Text("One").tag("One")
